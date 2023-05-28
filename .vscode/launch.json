@@ -1,0 +1,41 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Client",
+            "request": "launch",
+            "runtimeArgs": ["run", "start"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**"],
+            "type": "node",
+            "cwd": "${workspaceFolder}/client"
+        },
+        {
+            "name": "Run Server",
+            "request": "launch",
+            "runtimeArgs": ["run", "start"],
+            "runtimeExecutable": "npm",
+            "skipFiles": ["<node_internals>/**"],
+            "type": "node",
+            "cwd": "${workspaceFolder}/server"
+        },
+        {
+            "name": "Launch Test",
+            "program": "insertData.js",
+            "request": "launch",
+            "skipFiles": ["<node_internals>/**"],
+            "type": "node",
+            "cwd": "${workspaceFolder}/server"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Run Web",
+            "configurations": ["Run Server", "Run Client"],
+            "stopAll": true
+        }
+    ]
+}
